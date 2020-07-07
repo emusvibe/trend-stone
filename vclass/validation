@@ -1,0 +1,26 @@
+$('#cLoginForm').bootstrapValidator({
+  message:  'This value is not valid',
+  feedbackIcons:{
+    valid: 'glyphicon glyphicon-ok',
+    invalid: 'glyphicon glypicon-remove',
+    validating: 'glyphicon glyphicon-refresh'
+  },
+  fields:{
+    cusername:{
+      validators:{
+        notEmpty:{
+          message: 'User name can\'t be empty'
+        },
+        stringLength:{
+          min: 2,
+          max: 100,
+          message: 'Invalid input'
+        },
+        regexp:{
+          regexp: /^[a-zA-Z\_\.]+$/,
+          message: 'Invalid input'
+        }
+      }
+    }
+  }
+});
